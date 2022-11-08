@@ -1,0 +1,84 @@
+you are inside bin file open than cmd  access to database 
+you can use "mongo.exe", than show data base "db show",
+
+ mongo cmd
+
+how to view all database {
+ 1/ show dbs
+}
+
+how create a database {
+ 1/# use "db name"
+ 2/# db.students.insert({name:"Karim",city:"Dhaka"})
+}
+
+how to delete database {
+ 1/ use "db name"
+ 2/ db.dropDatabase()
+}
+
+how to create  collection {
+ 1/ use  "db name"
+ 2/ db.createCollection("collection name")
+
+}
+
+how to delete collection {
+ 1/ use "db name"
+ 2/db.collection name.drop()
+}
+
+how to insert data collection {
+ 1/ use "db name"
+ 2/ db."collection name".insertOne({name:"a",age:"b"}
+ 3/ db."collection name".insertMany([{name:"a",age:"b"},{name:"a",age:"b"},{name:"a",age:"b"},{name:"a",age:"b"}])
+}
+
+how to get one data collection {
+ 1/ use "db name"
+ 2/ db."collection name".findOne({name:'a'})
+
+}
+
+how to get All data collection {
+ 1/ use "db name"
+ 2/ db."collection name".find()
+ 2/ db."collection name".find().limit(3...)
+ ##butify
+ 3/ db."collection name".find().pretty()
+}
+
+/// mongo db query opratore
+how to get query data collection {
+ 1/ db."collection name".find({},{price:1,category:1,_id:0}).pretty()
+ # projection data filter 
+ 2/ db."collection name".find({price:{$eq:"200"}},{price:1,category:1,_id:0}).pretty()
+ 3/ db."collection name".find({$and:[{price:{$eq:"1499"}},{category:{$eq:"laptops"}}]},{price:1,category:1,_id:0}).pretty()
+ 4/ db."collection name".find({$or:[{price:{$eq:"1499"}},{category:{$eq:"laptops"}}]},{price:1,category:1,_id:0}).pretty()
+ 5/ db."collection name".find({},{title:1}).sort({title:1}).limit(10)
+ 5/ db."collection name".find({},{title:1}).sort({title:-1}).limit(10)
+}
+
+/// mongo db data update 
+how to update data {
+ 1/ db."collection name".updateOne({id:555},{$set:{name:""}})
+ 2/ db."collection name".update({id:555},{$set:{name:""}})
+}
+/// mongo db data delete
+how to delete data {
+ 1/ db."collection name".remove({id:555})
+
+}
+
+db.products.remove({id:959})
+
+
+
+
+
+
+
+
+
+
+
